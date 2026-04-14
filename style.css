@@ -230,9 +230,20 @@ flex: 1;
     }
 
     .hero-logo img {
-        max-width: 300px; /* Smaller logo for mobile */
+        max-width: 250px; /* Smaller logo for mobile */
     }
+.hero {
+    /* This pushes the "Coil It" text down so the navbar doesn't cover it */
+    padding-top: 15rem !important; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Aligns content toward the top but below the padding */
+}
 
+.hero-container {
+    padding-top: 0; /* Ensures the container itself isn't adding even more accidental space */
+}
     /* Inside @media (max-width: 768px) */
 .hero-container {
     flex-direction: column; 
