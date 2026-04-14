@@ -506,6 +506,52 @@ footer .credit a {
     text-decoration: underline;
 }
 
+/* Reviews Section Styling */
+.reviews {
+    padding: 7rem 7% 1.4rem;
+    background-color: var(--bg);
+}
+
+.reviews h2 {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.reviews h2 span {
+    color: var(--primary);
+}
+
+.reviews p {
+    text-align: center;
+    margin: 0 auto 4rem auto;
+    max-width: 600px;
+    font-size: 1.6rem;
+    color: #eee;
+    font-weight: 300;
+}
+
+.reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* This ensures the widget doesn't look squashed */
+    min-height: 400px; 
+}
+
+/* Mobile Tweak */
+@media (max-width: 768px) {
+    .reviews h2 {
+        font-size: 3rem;
+    }
+    
+    .reviews p {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+    }
+}
+
 /* Media Queries */
 /* Media Queries */
 
