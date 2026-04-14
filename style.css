@@ -292,10 +292,11 @@ flex: 1;
 }
 
 .about .row .content p {
-    margin-bottom: 0.8rem;
+margin-bottom: 1.2rem; /* slightly more space between paragraphs */
     font-size: 1.4rem;
-    font-weight: 100;
+    font-weight: 400; /* Changed from 100 to 400 for better visibility */
     line-height: 1.6;
+    color: #ffffff; /* Forced to pure white */
 }
 
 /* Item section */
@@ -482,6 +483,13 @@ footer .credit a {
 
 /* Tablet & Mobile */
 @media (max-width: 768px) {
+    .about .row .content p {
+        font-size: 1.5rem; /* Slightly larger for mobile eyes */
+        font-weight: 400;
+        color: #fff;
+        text-align: left; /* Keeps it professional looking on mobile */
+    }
+    
     html {
         font-size: 62.5%;
     }
