@@ -1,0 +1,525 @@
+:root {
+    --primary: #f1e788;
+    --bg: #010101;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: #FFFF;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: rgba(1, 1, 1, 0.8);
+    border-bottom: 1px solid #20274d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFFF;
+    font-style: italic;
+}
+
+.navbar .navbar-logo span {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+    color: #FFFF;
+    display: inline-block;
+    font-size: 1.1rem;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+    color: #FFFF;
+    margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+}
+
+#hamburger-menu {
+    display: none; 
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #010101; /* Solid black background */
+    padding-top: 8rem; /* Space for fixed navbar */
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centering the group in the middle of the screen */
+    gap: 4rem; /* Adds a consistent gap between text and logo */
+    max-width: 1200px; /* Prevents it from spreading too wide on huge monitors */
+    margin: 0 auto; /* Centers the container itself */
+    width: 100%;
+    padding: 1.4rem 7%;
+}
+
+.hero .content {
+    flex: 1;
+    text-align: left; /* Keeps text readable but contained */
+}
+
+.hero .content h1 {
+    font-size: 4rem;
+    color: #FFFF;
+    line-height: 1.2;
+}
+
+.hero .content h1 span {
+    color: var(--primary);
+}
+
+.hero .content p {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    font-weight: 300;
+}
+
+.hero .content .cta {
+    margin-top: 2rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color: #FFFF;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    transition: 0.3s;
+}
+.hero .content .cta.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    background-color: var(--primary);
+    color: #010101;
+    padding: 1.2rem 2.5rem;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+.hero .content .cta.whatsapp-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.hero .content .cta.whatsapp-btn:hover {
+    background-color: #25D366; /* Changes to WhatsApp Green on hover */
+    border-color: #25D366;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+}
+
+/* Logo Image Styling */
+.hero-logo {
+flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-logo img {
+    width: 100%;
+    max-width: 500px; /* Adjust size as needed */
+    height: auto;
+}
+
+/* Responsive adjustment for Mobile */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column; /* Stacks text on top of logo */
+        text-align: center;
+    }
+    
+    .hero .content {
+        margin-bottom: 3rem;
+    }
+
+    .hero-logo img {
+        max-width: 300px; /* Smaller logo for mobile */
+    }
+}
+
+/* about section */
+.about, .item, .contact {
+    padding: 7rem 7% 1.4rem;
+}
+
+.about h2, .item h2, .contact h2 {
+    text-align: center;
+    font-size: 4rem; /* Increased from 2.6rem */
+    margin-bottom: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.about h2 span, .item h2 span, .contact h2 span {
+    color: var(--primary);
+}
+
+.about .row {
+    display: flex;
+    align-items: center; /* Vertically centers text with the image */
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.about .row .about-img {
+    flex: 1 1 40rem;
+    display: flex;
+    justify-content: center; /* Centers the image within its half */
+}
+
+.about .row .about-img img {
+    width: 100%; /* Let the container control the size */
+    max-width: 500px; /* Prevents image from getting too big */
+    border-radius: 1rem; /* Optional: adds a nice modern touch */
+}
+
+.about .row .content {
+    flex: 1 1 40rem;
+    text-align: left;
+}
+
+.about .row .content h3 {
+    font-size: 2.8rem; /* Increased from 1.8rem */
+    margin-bottom: 1.5rem;
+    color: var(--primary); /* Makes the sub-heading pop in gold */
+}
+
+.about .row .content p {
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 100;
+    line-height: 1.6;
+}
+
+/* Item section */
+.item h2, .contact h2 {
+    margin-bottom: 1rem;
+}
+.item p, .contact p {
+text-align: center;
+    margin: 0 auto 2rem auto; /* The "auto" left/right is key for centering <p> */
+    max-width: 600px; /* Wider than before for better readability */
+}
+
+.item .row {
+    display: grid; /* Grid is much better for centering items than Flex */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center; /* Centers the card in its grid cell */
+    align-items: start;
+    margin-top: 5rem;
+}
+
+.item .row .item-card {
+    text-align: center;
+    width: 100%;
+}
+
+.item .row .item-card img {
+    width: 200px; /* Fixed size for circular images looks cleaner */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary); /* Gold border to match new theme */
+}
+
+.item .row .item-card .menu-card-title {
+    margin: 1rem auto 0.5rem;
+}
+
+/* Contact section */
+.contact .row {
+    display: flex;
+    margin-top: 2rem;
+    background-color: #222;
+}
+
+.contact .row .map {
+    flex: 1  1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contact .row form {
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contact .row form .input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: var(--bg);
+    border: 1px solid #eee;
+    padding-left: 2rem;
+}
+
+.contact .row form .input-group input {
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    background: none;
+    color: #FFFF;
+}
+
+.contact .row form .btn {
+margin-top: 3rem;
+    display: inline-flex; /* Changed from inline-block to match WhatsApp */
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 3.5rem; /* Matches the CTA sizing */
+    
+    /* Font Styling */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem; 
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+    /* Colors */
+    color: #010101; 
+    background-color: var(--primary);
+    
+    /* Shape & Border */
+    border: 2px solid var(--primary);
+    border-radius: 0.3rem; 
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+/* Address Info Styling */
+.contact .row form .address-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+    background-color: #111; /* Slightly lighter than the background to pop */
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary); /* Gold accent line */
+}
+
+.contact .row form .address-info i {
+    color: var(--primary);
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+.contact .row form .address-info p {
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    text-align: left; /* Overrides the center alignment of the form */
+    margin: 0; /* Resets paragraph margin */
+    font-weight: 300;
+}
+/* Add the hover effect to match the Hero button too */
+.contact .row form .btn:hover {
+    background-color: transparent;
+    color: var(--primary);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    transform: translateY(-3px); /* Subtle lift like the WhatsApp button */
+}
+
+/* Footer section */
+footer {
+    background-color: #f1e788;
+    text-align: center;
+    padding: 1rem 0 3rem;
+    margin-top: 3rem;
+}
+
+footer .social {
+    padding: 1rem 0;
+}
+
+footer .social a {
+    color: #000000;
+    margin: 1rem;
+}
+
+footer .social a:hover, footer .links a:hover {
+    color: var(--bg);
+}
+
+footer .links {
+    margin-bottom: 1.4rem;
+}
+
+footer .links a {
+    color: #000000;
+    padding: 0.7rem 1rem;
+}
+
+footer .credit {
+    color:#010101;
+    font-size: 0.8rem;
+}
+
+footer .credit a {
+    color: #010101;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/* Media Queries */
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+/* Tablet & Mobile */
+@media (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #FFFF;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: var(--bg);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    /* Fix About Section for Tablet (Stay side-by-side) */
+    .about .row {
+    display: flex;
+    flex-direction: column-reverse; /* This flips the order: Text moves to Top, Image moves to Bottom */
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap; /* Allows stacking */
+}
+.about .row .about-img {
+    width: 100%;
+    max-width: 450px;
+}
+
+.about .row .content {
+    width: 100%;
+    text-align: center; /* Optional: centering the text looks cleaner on mobile */
+}
+    /* Fix About Section for Mobile (Stack them only when very narrow) */
+    @media (max-width: 550px) {
+        .about .row {
+            flex-wrap: wrap; /* Stacks on small phones so text isn't 2 words wide */
+        }
+        .about .row .about-img img {
+            max-width: 100%;
+        }
+    }
+
+    .contact .row {
+        flex-wrap: wrap;
+    }
+
+    .contact .row .map {
+        height: 30rem;
+    }
+
+    .contact .row form {
+        padding: 2rem;
+    }
+
+/* Inside @media (max-width: 768px) */
+.item .row {
+    /* This forces exactly 2 columns on mobile */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1.5rem; /* Slightly smaller gap so they fit better side-by-side */
+    margin-top: 3rem;
+}
+
+.item .row .item-card img {
+    /* Scale down the images slightly so two can fit comfortably */
+    width: 140px; 
+    height: 140px;
+}
+
+.item .row .item-card h3 {
+    font-size: 1.4rem; /* Smaller titles so they don't wrap weirdly */
+}
+
+.item .row .item-card .item-card-price {
+    font-size: 1.1rem;
+}
+
+}
