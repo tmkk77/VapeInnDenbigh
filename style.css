@@ -188,6 +188,37 @@ flex: 1;
     .hero-logo img {
         max-width: 300px; /* Smaller logo for mobile */
     }
+
+    /* Inside @media (max-width: 768px) */
+.hero-container {
+    flex-direction: column; 
+    text-align: center; /* Centers all text elements */
+    justify-content: center;
+    align-items: center; /* Centers the flex items (like the button and logo) */
+}
+
+.hero .content {
+    text-align: center; /* Ensures the H1 and P tags are centered */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the WhatsApp button horizontally */
+    margin-bottom: 3rem;
+}
+
+.hero .content h1 {
+    font-size: 3rem; /* Slightly smaller for mobile screens */
+    margin: 0 auto;
+}
+
+.hero .content p {
+    font-size: 1.4rem;
+    margin: 1.5rem auto;
+}
+
+.hero .content .cta.whatsapp-btn {
+    /* Ensures the button stays centered even if it has a specific display type */
+    margin: 2rem auto 0 auto; 
+}
 }
 
 /* about section */
