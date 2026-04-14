@@ -28,7 +28,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.4rem 7%;
-    background-color: rgba(1, 1, 1, 0.8);
+    background-color: #010101;
     border-bottom: 1px solid #20274d;
     position: fixed;
     top: 0;
@@ -38,7 +38,7 @@ body {
 }
 
 .navbar .navbar-logo {
-font-size: 2.5rem; /* Slightly larger for impact */
+font-size: 4.5rem; /* Slightly larger for impact */
     font-weight: 700;
     color: #fff;
     font-style: normal;
@@ -193,9 +193,32 @@ flex: 1;
 
 /* Responsive adjustment for Mobile */
 @media (max-width: 768px) {
+.navbar {
+        flex-direction: column;
+        padding: 1.5rem 2%;
+        height: auto;
+        /* Remove the bottom border of the whole navbar if it looks like a line */
+        border-bottom: none; 
+        /*transition: top 0.3s; /* This makes the hide/show animation smooth */
+    }
+
     .navbar .navbar-logo {
-        font-size: 2.3rem; /* Tiny bit smaller if upright text is too wide */
-        letter-spacing: 0.5px;
+        font-size: 3.8rem !important;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 1rem;
+        /* Ensure no underline from links */
+        text-decoration: none; 
+    }
+
+    .navbar .navbar-extra {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        width: 100%;
+        /* REMOVE THIS LINE BELOW - it's likely the culprit */
+        border-top: none !important; 
+        padding-top: 0;
     }
     .hero-container {
         flex-direction: column; /* Stacks text on top of logo */
@@ -286,6 +309,7 @@ flex: 1;
 }
 
 .about .row .content h3 {
+    text-align: center;
     font-size: 2.8rem; /* Increased from 1.8rem */
     margin-bottom: 1.5rem;
     color: var(--primary); /* Makes the sub-heading pop in gold */
@@ -487,7 +511,7 @@ footer .credit a {
         font-size: 1.5rem; /* Slightly larger for mobile eyes */
         font-weight: 400;
         color: #fff;
-        text-align: left; /* Keeps it professional looking on mobile */
+        text-align: center; /* Keeps it professional looking on mobile */
     }
     
     html {
