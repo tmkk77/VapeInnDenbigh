@@ -193,6 +193,10 @@ flex: 1;
 
 /* Responsive adjustment for Mobile */
 @media (max-width: 768px) {
+    .navbar .navbar-logo {
+        font-size: 2.3rem; /* Tiny bit smaller if upright text is too wide */
+        letter-spacing: 0.5px;
+    }
     .hero-container {
         flex-direction: column; /* Stacks text on top of logo */
         text-align: center;
